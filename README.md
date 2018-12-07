@@ -28,7 +28,7 @@ After initialization, text "Found TPU" will be shown in Colab Google Jupyter out
 
 PS: If Initialization failed, please retry later. Google Colab, unfortunately, has TPU memory allocation issue occasionally.
 
-## Turn ordinal Keras model to TPU model
+## Turn ordinal compiled Keras model to TPU model
 
     tpucolab.compiled_model_to_tpu_model(model)
     
