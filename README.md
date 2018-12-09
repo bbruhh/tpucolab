@@ -42,6 +42,23 @@ Just as the same as ordinal Keras model, e.g.:
     
 Other Keras model functions can also be invoked in TPU model as usual.
 
+## Important Note
+The following keras object (include but not all) should not be imported from keras.* . Should be imported from tensorflow.keras.*
+
+Sequential, Model, Dense, Dropout, Flatten, Conv2D, MaxPooling2D
+
+e.g. (wrong)
+
+    from keras.models import Sequential, Model
+    from keras.layers import Dense, Dropout, Flatten
+    from keras.layers import Conv2D, MaxPooling2D
+
+e.g. (correct)
+
+    from tensorflow.keras.models import Sequential, Model
+    from tensorflow.keras.layers import Dense, Dropout, Flatten
+    from tensorflow.keras.layers import Conv2D, MaxPooling2D
+
 
 ## Thanks
 
