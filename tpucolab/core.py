@@ -23,7 +23,13 @@ class TPUColab:
         return self.TPU_ADDRESS != ''
 
     def compiled_model_to_tpu_model(self, model):
+        if not self.is_tpu_available():
+            print('Warning, TPU not found, failed to convert to TPU model')
+            return False
+
         tf.contrib.tpu.keras_to_tpu_model(
             model,
             strategy=tf.contrib.tpu.TPUDistributionStrategy(
                 tf.contrib.cluster_resolver.TPUClusterResolver(self.TPU_ADDRESS)))
+
+        return True

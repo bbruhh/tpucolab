@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='tpucolab',
-    version='0.0.2',
+    version='0.0.3',
     packages=['tpucolab'],
     url='https://github.com/taomanwai/tpucolab',
     license='MIT',
